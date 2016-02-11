@@ -1,0 +1,13 @@
+package com.mamewo.printapp;
+import java.io.*;
+import java.util.*;
+public class PrintTopology {
+    public static void main(String argv[])
+    {
+        try {
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

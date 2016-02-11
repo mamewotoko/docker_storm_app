@@ -1,0 +1,76 @@
+<project name="javahelloant" default="jar" basedir=".">
+    <property name="src.dir" value="src"/>
+    <property name="classes.dir" value="classes"/>
+    <property name="javadoc.dir" value="docs"/>
+    <property name="jar.name" value="topology.jar"/>
+    <property name="storm.home" value="apache-storm-0.9.6"/>
+ 
+    <path id="class.path">
+      <pathelement location="${storm.home}/lib/asm-4.0.jar" />
+      <pathelement location="${storm.home}/lib/carbonite-1.4.0.jar" />
+      <pathelement location="${storm.home}/lib/chill-java-0.3.5.jar" />
+      <pathelement location="${storm.home}/lib/clj-stacktrace-0.2.2.jar" />
+      <pathelement location="${storm.home}/lib/clj-time-0.4.1.jar" />
+      <pathelement location="${storm.home}/lib/clojure-1.5.1.jar" />
+      <pathelement location="${storm.home}/lib/clout-1.0.1.jar" />
+      <pathelement location="${storm.home}/lib/commons-codec-1.6.jar" />
+      <pathelement location="${storm.home}/lib/commons-exec-1.1.jar" />
+      <pathelement location="${storm.home}/lib/commons-fileupload-1.2.1.jar" />
+      <pathelement location="${storm.home}/lib/commons-io-2.4.jar" />
+      <pathelement location="${storm.home}/lib/commons-lang-2.5.jar" />
+      <pathelement location="${storm.home}/lib/commons-logging-1.1.3.jar" />
+      <pathelement location="${storm.home}/lib/compojure-1.1.3.jar" />
+      <pathelement location="${storm.home}/lib/core.incubator-0.1.0.jar" />
+      <pathelement location="${storm.home}/lib/disruptor-2.10.4.jar" />
+      <pathelement location="${storm.home}/lib/hiccup-0.3.6.jar" />
+      <pathelement location="${storm.home}/lib/jetty-6.1.26.jar" />
+      <pathelement location="${storm.home}/lib/jetty-util-6.1.26.jar" />
+      <pathelement location="${storm.home}/lib/jgrapht-core-0.9.0.jar" />
+      <pathelement location="${storm.home}/lib/jline-2.11.jar" />
+      <pathelement location="${storm.home}/lib/joda-time-2.0.jar" />
+      <pathelement location="${storm.home}/lib/json-simple-1.1.jar" />
+      <pathelement location="${storm.home}/lib/kryo-2.21.jar" />
+      <pathelement location="${storm.home}/lib/log4j-over-slf4j-1.6.6.jar" />
+      <pathelement location="${storm.home}/lib/logback-classic-1.0.13.jar" />
+      <pathelement location="${storm.home}/lib/logback-core-1.0.13.jar" />
+      <pathelement location="${storm.home}/lib/math.numeric-tower-0.0.1.jar" />
+      <pathelement location="${storm.home}/lib/minlog-1.2.jar" />
+      <pathelement location="${storm.home}/lib/objenesis-1.2.jar" />
+      <pathelement location="${storm.home}/lib/reflectasm-1.07-shaded.jar" />
+      <pathelement location="${storm.home}/lib/ring-core-1.1.5.jar" />
+      <pathelement location="${storm.home}/lib/ring-devel-0.3.11.jar" />
+      <pathelement location="${storm.home}/lib/ring-jetty-adapter-0.3.11.jar" />
+      <pathelement location="${storm.home}/lib/ring-servlet-0.3.11.jar" />
+      <pathelement location="${storm.home}/lib/servlet-api-2.5.jar" />
+      <pathelement location="${storm.home}/lib/slf4j-api-1.7.5.jar" />
+      <pathelement location="${storm.home}/lib/snakeyaml-1.11.jar" />
+      <pathelement location="${storm.home}/lib/storm-core-0.9.6.jar" />
+      <pathelement location="${storm.home}/lib/tools.cli-0.2.4.jar" />
+      <pathelement location="${storm.home}/lib/tools.logging-0.2.3.jar" />
+      <pathelement location="${storm.home}/lib/tools.macro-0.1.0.jar" />
+    </path>
+ 
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac debug="true" includeAntRuntime="true" encoding="Windows-31J" srcdir="${src.dir}" destdir="${classes.dir}">
+            <classpath refid="class.path"/>
+        </javac>
+    </target>
+ 
+    <target name="jar" depends="compile">
+        <jar jarfile="${jar.name}" basedir="${classes.dir}"/>
+    </target>
+ 
+    <target name="javadoc">
+        <mkdir dir="${javadoc.dir}"/>
+        <javadoc destdir="${javadoc.dir}" classpathref="class.path">
+            <fileset dir="${src.dir}"/>
+        </javadoc>
+    </target>
+ 
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+        <delete dir="${javadoc.dir}"/>
+        <delete file="${jar.name}"/>
+    </target>
+</project>
