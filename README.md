@@ -4,23 +4,23 @@ Submit topology to dockerized storm
 Usage: use storm-starter
 ------------------------
 1. download storm binary
-```bash
+    ```bash
 sh setup.sh
-```
+    ```
 2. start new terminal and start zookeeper
-```bash
+    ```bash
 cd docker-storm
 docker-compose -p storm -f ./docker-zookeeper.yml up
-```
+    ```
 3. start new terminal and start storm
-```bash
+    ```bash
 cd docker-storm
 docker-compose -p storm -f ./docker-storm.yml up
-```
+    ```
 4. submit topology 
-```bash
+    ```bash
 sh run.sh
-```
+    ```
 5. browse storm ui and check that submitted topology is listed in table
 http://localhost:8080
 
