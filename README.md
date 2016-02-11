@@ -3,6 +3,8 @@ Submit topology to dockerized storm
 
 Usage: use storm-starter
 ------------------------
+0. install [docker-compose](https://docs.docker.com/compose/install/)
+
 1. download storm binary
 ```
 sh setup.sh
@@ -54,12 +56,13 @@ References
 TODO
 ----
 * use multiple nimbus and supervisor containers
+* use logviewer
 
 Memo
 ----
+* docker-storm does not work as background container???
 * I cannot start wurstmeister/storm-docker...
 
 ----
 Takashi Masuyama < mamewotoko@gmail.com >  
 http://mamewo.ddo.jp/
-
