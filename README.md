@@ -7,23 +7,19 @@ Usage: use storm-starter
 ```bash
 sh setup.sh
 ```
-
 2. start new terminal and start zookeeper
 ```bash
 cd docker-storm
 docker-compose -p storm -f ./docker-zookeeper.yml up
 ```
-
 3. start new terminal and start storm
 cd docker-storm
 docker-compose -p storm -f ./docker-storm.yml up
 ```
-
 4. submit topology 
 ```bash
 sh run.sh
 ```
-
 5. browse storm ui and check that submitted topology is listed in table
 http://localhost:8080
 
