@@ -1,0 +1,3 @@
+[submodule "docker-storm"]
+	path = docker-storm
+	url = https://github.com/fhussonnois/docker-storm.git
