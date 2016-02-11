@@ -13,6 +13,7 @@ cd docker-storm
 docker-compose -p storm -f ./docker-zookeeper.yml up
 ```
 3. start new terminal and start storm
+```bash
 cd docker-storm
 docker-compose -p storm -f ./docker-storm.yml up
 ```
