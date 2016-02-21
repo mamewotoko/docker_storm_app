@@ -5,25 +5,30 @@ Usage: use storm-starter
 ------------------------
 0. install [docker-compose](https://docs.docker.com/compose/install/)
 
-1. download storm binary
+1. clone submodules
+```
+git submodule init
+git submodule update
+```
+2. download storm binary
 ```
 sh setup.sh
 ```
-2. start new terminal and start zookeeper
+3. start new terminal and start zookeeper
 ```
 cd docker-storm
 docker-compose -p storm -f ./docker-zookeeper.yml up
 ```
-3. start new terminal and start storm
+4. start new terminal and start storm
 ```
 cd docker-storm
 docker-compose -p storm -f ./docker-storm.yml up
 ```
-4. submit topology 
+5. submit topology 
 ```
 sh run.sh
 ```
-5. browse storm ui and check that submitted topology is listed in table
+6. browse storm ui and check that submitted topology is listed in table
 http://localhost:8080
 
 Usage: use sample app in src directory
@@ -51,7 +56,7 @@ Kill topology using storm ui
 
 References
 ----------
-- [stormをdockerで動かす](http://qiita.com/lambda-knight/items/553304ec0add145c2cce)
+- [fhussonnois/docker-storm](https://github.com/fhussonnois/docker-storm)
 
 TODO
 ----
