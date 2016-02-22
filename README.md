@@ -4,7 +4,6 @@ Submit topology to dockerized storm
 Usage: use storm-starter
 ------------------------
 0. install [docker-compose](https://docs.docker.com/compose/install/)
-
 1. clone submodules
 ```
 git submodule init
